@@ -25,8 +25,10 @@ def from_ray_require_success(success,val):
     assert success
     return val / 1e27
 
+
 def unpack_no_success(success: bool, output: Any) -> Tuple[bool,Any]:
     return (success, output)
+
 
 def test_multicall():
     multi = Multicall([
@@ -37,6 +39,7 @@ def test_multicall():
     print(result)
     assert isinstance(result['supply'], float)
     assert isinstance(result['balance'], float)
+
 
 def test_multicall_no_success():
     multi = Multicall(

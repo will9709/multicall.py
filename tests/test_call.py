@@ -45,6 +45,7 @@ def test_call_with_predefined_args_async():
 def test_call_threading():
     Parallel(4,'threading')(delayed(Call(CHAI, 'name()(string)', [['name', None]]))() for i in range(10))
 
+
 @pytest.mark.skip(reason="upgraded web3")
 def test_call_multiprocessing():
     # NOTE can't have middlewares for multiprocessing
